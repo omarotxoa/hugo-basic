@@ -4,12 +4,16 @@
 	{{ partial "toc.html" . }}
 
     <div class="post">
-        <p>Custom single layout</p>
+        <p>Layout: <em>Custom two</em></p>
 
         {{ partial "single/post-info.html" . }}
         {{ partial "single/title.html" . }}
 
         {{ partial "single/header.html" . }}
+
+        {{- if .Params.tags }}
+          {{ partial "tags.html" .Params.tags }}
+        {{- end}}
 
         {{ .Content }}
 
